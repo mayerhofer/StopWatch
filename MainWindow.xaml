@@ -21,9 +21,9 @@
   </Window.Resources>
   <Grid Background="#000022">
     <TextBlock x:Name="DisplayTime" FontSize="40" Margin="50,52,50,308" TextAlignment="Center" Foreground="#0094C6">00 :: 00 :: 00</TextBlock>
-    <Button x:Name="Start" Margin="25,171,277,217" Click="Start_Click">Start</Button>
-    <Button x:Name="Stop" Margin="150,171,150,217" Click="Stop_Click" IsEnabled="False">Pause</Button>
-    <Button x:Name="Reset" Margin="275,171,25,217" Click="Reset_Click">Stop</Button>
+    <Button x:Name="Start" Margin="25,171,277,203" Click="Start_Click">Start</Button>
+    <Button x:Name="Stop" Margin="150,171,150,203" Click="Stop_Click" IsEnabled="False">Pause</Button>
+    <Button x:Name="Reset" Margin="275,171,25,203" Click="Reset_Click">Stop</Button>
     <ListBox x:Name="ElapsedItems" HorizontalAlignment="Center" Height="173" VerticalAlignment="Top" Width="400" Margin="0,261,0,0"/>
   </Grid>
 </Window>

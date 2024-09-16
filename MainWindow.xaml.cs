@@ -12,7 +12,8 @@ namespace StopWatch
   {
     private readonly DispatcherTimer timer = new();
     private readonly Stopwatch stopWatch = new();
-    private string currentTime = "00::00::00";
+    private const string startTime = "00 :: 00 :: 00";
+    private string currentTime = startTime;
 
     public MainWindow()
     {
@@ -40,7 +41,6 @@ namespace StopWatch
         ElapsedItems.Items.Insert(0, currentTime);
         currentTime = "";
       }
-      Start.Content = "Start";
       Start.IsEnabled = true;
       Stop.IsEnabled = false;
     }
@@ -50,21 +50,15 @@ namespace StopWatch
       StopWatch();
 
       stopWatch.Reset();
-      DisplayTime.Text = currentTime = "00 :: 00 :: 00";
+      DisplayTime.Text = currentTime = startTime;
     }
 
     private void Start_Click(object sender, RoutedEventArgs e)
     {
-      if (stopWatch.IsRunning)
-      {
-        StopWatch();
-      }
-      else
+      if (!stopWatch.IsRunning)
       {
         stopWatch.Start();
         timer.Start();
-        Start.Content = "Stop";
-        Start.Background = Brushes.Red;
         Start.IsEnabled = false;
         Stop.IsEnabled = true;
       }
